@@ -6,6 +6,7 @@ import logging
 import sys
 import warnings
 from urllib.parse import urlparse
+import os
 
 import numpy as np
 import pandas as pd
@@ -19,6 +20,9 @@ from mlflow.models import infer_signature
 
 logging.basicConfig(level=logging.WARN)
 logger = logging.getLogger(__name__)
+
+os.environ['MLFLOW_TRACKING_USERNAME'] = 'Moraut'
+os.environ['MLFLOW_TRACKING_PASSWORD'] = 'a2a100036d752c584fe587e1a06c837d6c96ef22'
 
 
 def eval_metrics(actual, pred):
